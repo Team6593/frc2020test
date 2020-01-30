@@ -7,20 +7,26 @@
 
 package frc.robot.commands;
 
+import java.util.function.DoubleSupplier;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveTrain;
 
-public class driveBackward extends CommandBase {
+public class arcadeDrive extends CommandBase {
   private final DriveTrain m_DriveTrain;
-  /**
-   * Creates a new driveBackward.
-   */
-  public driveBackward(DriveTrain driveTrain, double timeout) {
-    // Use addRequirements() here to declare subsystem dependencies.
-    
-    m_DriveTrain = driveTrain;
+  private final DoubleSupplier m_speedvalue;
+  private final DoubleSupplier m_rotatevalue;
 
+  /**
+   * Creates a new arcadeDrive.
+   */
+  public arcadeDrive(DriveTrain driveTrain, DoubleSupplier speed, DoubleSupplier rotatevalue) {
+    m_DriveTrain = driveTrain;
+    m_speedvalue = speed;
+    m_rotatevalue = rotatevalue;
+   
     addRequirements(m_DriveTrain);
+    // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
@@ -31,7 +37,7 @@ public class driveBackward extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_DriveTrain.arcadedrive(-.6, 0);
+    m_DriveTrain.arcadedrive(m_speedvalue.getAsDouble(), m_rotatevalue.getAsDouble());
   }
 
   // Called once the command ends or is interrupted.

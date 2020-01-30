@@ -15,7 +15,7 @@ public class driveForward extends CommandBase {
   /**
    * Creates a new driveForward.
    */
-  public driveForward(DriveTrain driveTrain) {
+  public driveForward(final DriveTrain driveTrain) {
     // Use addRequirements() here to declare subsystem dependencies.
     m_DriveTrain = driveTrain;
 
@@ -30,7 +30,7 @@ public class driveForward extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_DriveTrain.arcadedrive(.6, 0);
+    m_DriveTrain.arcadedrive(0, .3);
   }
 
   // Called once the command ends or is interrupted.

@@ -8,19 +8,15 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.DriveTrain;
+import frc.robot.Robot;
 
-public class driveBackward extends CommandBase {
-  private final DriveTrain m_DriveTrain;
+public class piston_Back extends CommandBase {
   /**
-   * Creates a new driveBackward.
+   * Creates a new piston_Back.
    */
-  public driveBackward(DriveTrain driveTrain, double timeout) {
+  public piston_Back() {
+    addRequirements(Robot.pistons);
     // Use addRequirements() here to declare subsystem dependencies.
-    
-    m_DriveTrain = driveTrain;
-
-    addRequirements(m_DriveTrain);
   }
 
   // Called when the command is initially scheduled.
@@ -31,13 +27,13 @@ public class driveBackward extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_DriveTrain.arcadedrive(-.6, 0);
+    Robot.pistons.back();
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_DriveTrain.arcadedrive(0, 0);
+    Robot.pistons.stop();
   }
 
   // Returns true when the command should end.

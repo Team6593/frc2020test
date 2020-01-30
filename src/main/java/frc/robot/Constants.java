@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
@@ -28,6 +30,11 @@ public final class Constants {
     public static SpeedController rightMotor = new Spark(2);
     public static SpeedController rightMotor2 = new Spark(3);
     public static SpeedControllerGroup rightMotors = new SpeedControllerGroup(rightMotor, rightMotor2);
+
+    public static DoubleSolenoid ds1 = new DoubleSolenoid(0, 0);
+    public static DoubleSolenoid ds2 = new DoubleSolenoid(0, 0);
+
+    public static Compressor com = new Compressor();
 
 
 }
