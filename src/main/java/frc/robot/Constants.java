@@ -36,5 +36,28 @@ public final class Constants {
 
     public static Compressor com = new Compressor();
 
+    public static SpeedController intakeM = new Spark(4);
+    public static SpeedController shootingM = new Spark(5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
 
 }
