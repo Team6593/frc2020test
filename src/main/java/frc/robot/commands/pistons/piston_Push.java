@@ -5,20 +5,17 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.commands.pistons;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.DriveTrain;
+import frc.robot.Robot;
 
-public class rotateMotorsStop extends CommandBase {
-  private final DriveTrain m_DriveTrain;
+public class piston_Push extends CommandBase {
   /**
-   * Creates a new rotateMotorsStop.
+   * Creates a new Piston_push.
    */
-  public rotateMotorsStop(DriveTrain driveTrain) {
-    m_DriveTrain = driveTrain;
-
-    addRequirements(m_DriveTrain);
+  public piston_Push() {
+    addRequirements(Robot.m_pistons);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -30,13 +27,13 @@ public class rotateMotorsStop extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_DriveTrain.arcadedrive(0, 0);
+    Robot.m_pistons.forward();
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_DriveTrain.arcadedrive(0, 0);
+    Robot.m_pistons.stop();
   }
 
   // Returns true when the command should end.

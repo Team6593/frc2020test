@@ -5,18 +5,18 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.commands.rotateMotors;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveTrain;
 
-public class rotateMotorsStart extends CommandBase {
+public class rotateMotors_Start extends CommandBase {
   private final DriveTrain m_DriveTrain;
   
   /**
    * Creates a new rotateMotorsStart.
    */
-  public rotateMotorsStart(DriveTrain driveTrain) {
+  public rotateMotors_Start(DriveTrain driveTrain) {
     m_DriveTrain = driveTrain;
 
     addRequirements(m_DriveTrain);

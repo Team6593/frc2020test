@@ -5,17 +5,17 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.commands.pistons;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
 
-public class shootOut_Start extends CommandBase {
+public class piston_Stop extends CommandBase {
   /**
-   * Creates a new shootOut_Start.
+   * Creates a new piston_Stop.
    */
-  public shootOut_Start() {
-    addRequirements(Robot.m_shootOut);
+  public piston_Stop() {
+    addRequirements(Robot.m_pistons);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -27,11 +27,13 @@ public class shootOut_Start extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    Robot.m_pistons.stop();
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    Robot.m_pistons.stop();
   }
 
   // Returns true when the command should end.

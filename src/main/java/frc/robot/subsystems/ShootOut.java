@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
-public class Shoot_out extends SubsystemBase {
+public class ShootOut extends SubsystemBase {
   /**
    * Creates a new Shoot_out.
    */

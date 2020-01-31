@@ -7,13 +7,25 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import java.util.function.DoubleSupplier;
 
-public class shootOut_Stop extends CommandBase {
+import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.DriveTrain;
+
+public class arcade_Drive extends CommandBase {
+  private final DriveTrain m_DriveTrain;
+  private final DoubleSupplier m_speedvalue;
+  private final DoubleSupplier m_rotatevalue;
+
   /**
-   * Creates a new shootOut_Stop.
+   * Creates a new arcadeDrive.
    */
-  public shootOut_Stop() {
+  public arcade_Drive(DriveTrain driveTrain, DoubleSupplier speed, DoubleSupplier rotatevalue) {
+    m_DriveTrain = driveTrain;
+    m_speedvalue = speed;
+    m_rotatevalue = rotatevalue;
+   
+    addRequirements(m_DriveTrain);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -25,11 +37,13 @@ public class shootOut_Stop extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    m_DriveTrain.arcadedrive(m_speedvalue.getAsDouble(), m_rotatevalue.getAsDouble());
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    m_DriveTrain.arcadedrive(0, 0);
   }
 
   // Returns true when the command should end.

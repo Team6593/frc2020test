@@ -5,15 +5,16 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.commands.intake;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-
-public class shootOut_Back extends CommandBase {
+import frc.robot.Robot;
+public class intake_Start extends CommandBase {
   /**
-   * Creates a new shootOut_Back.
+   * Creates a new intake_Start.
    */
-  public shootOut_Back() {
+  public intake_Start() {
+    addRequirements(Robot.m_intake);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -25,11 +26,13 @@ public class shootOut_Back extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    Robot.m_intake.start(.5);
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    Robot.m_intake.stop();
   }
 
   // Returns true when the command should end.

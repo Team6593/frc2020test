@@ -5,17 +5,17 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.commands.intake;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
 
-public class piston_Back extends CommandBase {
+public class intake_Stop extends CommandBase {
   /**
-   * Creates a new piston_Back.
+   * Creates a new intake_Stop.
    */
-  public piston_Back() {
-    addRequirements(Robot.m_pistons);
+  public intake_Stop() {
+    addRequirements(Robot.m_intake);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -27,13 +27,13 @@ public class piston_Back extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Robot.m_pistons.back();
+    Robot.m_intake.stop();
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    Robot.m_pistons.stop();
+    Robot.m_intake.stop();
   }
 
   // Returns true when the command should end.

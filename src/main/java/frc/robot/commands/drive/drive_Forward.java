@@ -5,19 +5,18 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.commands.drive;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveTrain;
 
-public class driveBackward extends CommandBase {
+public class drive_Forward extends CommandBase {
   private final DriveTrain m_DriveTrain;
   /**
-   * Creates a new driveBackward.
+   * Creates a new driveForward.
    */
-  public driveBackward(DriveTrain driveTrain, double timeout) {
+  public drive_Forward(final DriveTrain driveTrain) {
     // Use addRequirements() here to declare subsystem dependencies.
-    
     m_DriveTrain = driveTrain;
 
     addRequirements(m_DriveTrain);
@@ -31,12 +30,12 @@ public class driveBackward extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_DriveTrain.arcadedrive(-.6, 0);
+    m_DriveTrain.arcadedrive(0, .3);
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {
+  public void end(final boolean interrupted) {
     m_DriveTrain.arcadedrive(0, 0);
   }
 

@@ -14,11 +14,12 @@ import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.MotorFunctions;
 import frc.robot.subsystems.Pistons;
-
+import frc.robot.subsystems.ShootOut;
 /**
- * The VM is configured to automatically run this class, and to call the functions corresponding to
- * each mode, as described in the TimedRobot documentation. If you change the name of this class or
- * the package after creating this project, you must also update the build.gradle file in the
+ * The VM is configured to automatically run this class, and to call the
+ * functions corresponding to each mode, as described in the TimedRobot
+ * documentation. If you change the name of this class or the package after
+ * creating this project, you must also update the build.gradle file in the
  * project.
  */
 public class Robot extends TimedRobot {
@@ -29,6 +30,7 @@ public class Robot extends TimedRobot {
   public DriveTrain m_drivetrain;
   public static Pistons m_pistons;
   public static Intake m_intake;
+  public static ShootOut m_shootOut;
 
   /**
    * This function is run when the robot is first started up and should be used for any

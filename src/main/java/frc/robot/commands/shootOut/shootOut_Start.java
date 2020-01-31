@@ -5,27 +5,17 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
-
-import java.util.function.DoubleSupplier;
+package frc.robot.commands.shootOut;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.DriveTrain;
+import frc.robot.Robot;
 
-public class arcadeDrive extends CommandBase {
-  private final DriveTrain m_DriveTrain;
-  private final DoubleSupplier m_speedvalue;
-  private final DoubleSupplier m_rotatevalue;
-
+public class shootOut_Start extends CommandBase {
   /**
-   * Creates a new arcadeDrive.
+   * Creates a new shootOut_Start.
    */
-  public arcadeDrive(DriveTrain driveTrain, DoubleSupplier speed, DoubleSupplier rotatevalue) {
-    m_DriveTrain = driveTrain;
-    m_speedvalue = speed;
-    m_rotatevalue = rotatevalue;
-   
-    addRequirements(m_DriveTrain);
+  public shootOut_Start() {
+    addRequirements(Robot.m_shootOut);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -37,13 +27,13 @@ public class arcadeDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_DriveTrain.arcadedrive(m_speedvalue.getAsDouble(), m_rotatevalue.getAsDouble());
+    Robot.m_shootOut.start(.5);
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_DriveTrain.arcadedrive(0, 0);
+    Robot.m_shootOut.stop();
   }
 
   // Returns true when the command should end.
