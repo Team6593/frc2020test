@@ -22,7 +22,7 @@ public class Shoot_out extends SubsystemBase {
    }
 
   public void back(double s) {
-    shM.set(s);
+    shM.set(-s);
   }
 
   public void stop(){

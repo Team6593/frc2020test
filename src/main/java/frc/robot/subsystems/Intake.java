@@ -22,7 +22,7 @@ public class Intake extends SubsystemBase {
   }
 
   public void back(double s){
-    inM.set(s);
+    inM.set(-s);
   }
 
   public void stop(){

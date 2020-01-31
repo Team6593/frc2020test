@@ -15,7 +15,7 @@ public class piston_Stop extends CommandBase {
    * Creates a new piston_Stop.
    */
   public piston_Stop() {
-    addRequirements(Robot.pistons);
+    addRequirements(Robot.m_pistons);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -27,13 +27,13 @@ public class piston_Stop extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Robot.pistons.stop();
+    Robot.m_pistons.stop();
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    Robot.pistons.stop();
+    Robot.m_pistons.stop();
   }
 
   // Returns true when the command should end.

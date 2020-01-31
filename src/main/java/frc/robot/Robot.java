@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.MotorFunctions;
 import frc.robot.subsystems.Pistons;
 
@@ -26,7 +27,8 @@ public class Robot extends TimedRobot {
   private RobotContainer m_robotContainer;
   public MotorFunctions m_functions;
   public DriveTrain m_drivetrain;
-  public static Pistons pistons;
+  public static Pistons m_pistons;
+  public static Intake m_intake;
 
   /**
    * This function is run when the robot is first started up and should be used for any
