@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.XboxController;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -38,6 +39,59 @@ public final class Constants {
 
     public static SpeedController intakeM = new Spark(4);
     public static SpeedController shootingM = new Spark(5);
+
+    public static final int XBOX_PORT_ID = (0);
+    public static final XboxController XBOX_CONTROLLER = new XboxController(XBOX_PORT_ID);
+   
+    public static final int L_X_AXIS = 0;
+    public static final int L_Y_AXIS = 1;
+   
+    public static final int L_TRIGGER = 2;
+    public static final int R_TRIGGER = 3;
+   
+    public static final int R_X_AXIS = 4;
+    public static final int R_Y_AXIS = 5;
+   
+    public static final int A_BUTTON = 1;
+    public static final int B_BUTTON = 2;
+    public static final int X_BUTTON = 3;
+    public static final int Y_BUTTON = 4;
+
+    public static final int LEFT_TRIGGER_BUTTON = 5;
+    public static final int RIGHT_TRIGGER_BUTTON = 6;
+
+    public static final int LEFT_SMALL_BUTTON = 7;
+    public static final int RIGHT_SMALL_BUTTON = 8;
+
+    public static final int LEFT_JOYSTICK_BUTTON = 9;
+    public static final int RIGHT_JOYSTICK_BUTTON = 10;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
