@@ -32,7 +32,7 @@ public class RobotContainer {
   private final intake_Start i_S = new intake_Start();
   private final shootOut_Start s_S = new shootOut_Start();
   private final rotateMotors_Start r_S = new rotateMotors_Start(m_drive);
-
+  
   private final XboxController x_stick = new XboxController(0);
 
   private Command m_autoCommand;
@@ -63,16 +63,6 @@ public class RobotContainer {
     b_Button.whenPressed(i_S);
     x_Button.whenPressed(s_S);
     y_Button.whenPressed(r_S);
-    
-    
-
-
-    
-
-
-
-
-
   }
 
   /**

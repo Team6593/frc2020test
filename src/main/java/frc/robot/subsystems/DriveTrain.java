@@ -22,7 +22,6 @@ public class DriveTrain extends SubsystemBase {
     public final SpeedControllerGroup leftMotors = Constants.leftMotors;
     public final SpeedControllerGroup rightMotors = Constants.rightMotors;
     public final DifferentialDrive m_Drive = new DifferentialDrive(leftMotors, rightMotors);
-  private DifferentialDrive drive;
   
     public void _arcadeDrive(double x, double y){
       m_Drive.arcadeDrive(x, y);
@@ -33,11 +32,11 @@ public class DriveTrain extends SubsystemBase {
   }
 
   public void arcadedrive(double movevalue, double rotatevalue){
-    drive.arcadeDrive(movevalue, rotatevalue);
+    m_Drive.arcadeDrive(movevalue, rotatevalue);
   }
   
   public void stopmotor(){
-    drive.stopMotor();
+    m_Drive.stopMotor();
   }
   @Override
   public void periodic() {
