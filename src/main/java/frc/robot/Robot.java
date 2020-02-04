@@ -48,7 +48,8 @@ public class Robot extends TimedRobot {
   private Encoder encoder = new Encoder(0, 1, true, EncodingType.k4X);
 
   private final double kDriveTick2Feet = 1.0 / 128 * 6 * Math.PI / 12;
-   /**
+
+  /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
    */

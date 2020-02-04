@@ -26,7 +26,7 @@ public class arcade_Drive extends CommandBase {
     m_rotatevalue = rotatevalue;
    
     addRequirements(m_DriveTrain);
-    // Use addRequirements() here to declare subsystem dependencies.
+    // Use addRequirements() here to declare subsystem dependencies. 
   }
 
   // Called when the command is initially scheduled.
@@ -38,7 +38,7 @@ public class arcade_Drive extends CommandBase {
   @Override
   public void execute() {
     m_DriveTrain.arcadedrive(m_speedvalue.getAsDouble(), m_rotatevalue.getAsDouble());
-  }
+    }
 
   // Called once the command ends or is interrupted.
   @Override
