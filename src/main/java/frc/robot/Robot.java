@@ -139,7 +139,7 @@ public class Robot extends TimedRobot {
 
     double errorRate = (error - lastError) / dt;
 
-    double outputSpeed = kP * error + kI * errorSum + kD * errorRate;
+    double outputSpeed = kP * error - kI * errorSum + kD * errorRate;
 
     // output to motors
 
