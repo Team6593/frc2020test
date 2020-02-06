@@ -68,15 +68,6 @@ public final class Constants {
 
 
 
-public static class AutoMap {
-        public static final int MARGIN_GYRO_DRIVE = 3;
-        public static final double GYRO_DRIVE_KP = .01;
-    }
-
-
-
-
-
 
 
 
