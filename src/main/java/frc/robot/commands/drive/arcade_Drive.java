@@ -16,9 +16,9 @@ public class arcade_Drive extends CommandBase {
   private final DriveTrain m_DriveTrain;
   private final DoubleSupplier m_speedvalue;
   private final DoubleSupplier m_rotatevalue;
-
+   
   /**
-   * Creates a new arcadeDrive.
+   * Creates a new arcadeDrive. 
    */
   public arcade_Drive(DriveTrain driveTrain, DoubleSupplier speed, DoubleSupplier rotatevalue) {
     m_DriveTrain = driveTrain;

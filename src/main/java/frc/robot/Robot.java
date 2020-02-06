@@ -42,7 +42,7 @@ public class Robot extends TimedRobot {
   private Spark leftMotor2 = new Spark(1);
   private Spark rightMotor1 = new Spark(2);
   private Spark rightMotor2 = new Spark(3);
-
+ 
   private Joystick joy1 = new Joystick(0);
 
   private Encoder encoder = new Encoder(0, 1, true, EncodingType.k4X);
